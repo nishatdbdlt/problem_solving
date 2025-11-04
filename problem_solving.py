@@ -1,5 +1,7 @@
 from functools import total_ordering
 from os import sendfile
+from pydoc import replace
+from unittest import removeResult
 
 print('nishat')
 
@@ -122,3 +124,38 @@ def is_palindrome(s):
     s = s.lower() .replace("" , " ")
     return s == s[: : -1]
 print(is_palindrome("Nishat"))
+
+def is_palindrome(s):
+    s =s.lower(). replace(" ","")
+    return s ==s[: : -1]
+print(is_palindrome('nishaT'))
+print(is_palindrome("madam"))
+
+def is_palindrome(s):
+    s = s.lower(). replace("" ,"")
+    return  s ==s[:: -1]
+print(is_palindrome("NishaT"))
+print(is_palindrome("madaM"))
+
+
+def is_palindrome(s):
+    s = s.lower(). replace(" ","")
+    return s==s[: : -1]
+print(is_palindrome("Nishat"))
+
+def remove_duplicate(lst):
+    resutl =[]
+    for i in lst:
+        if i not in resutl:
+            resutl.append(i)
+    return resutl
+print(remove_duplicate([3,4,5,6,6,7,4,3]))
+
+
+def remove_duplicate(lst):
+    list=[]
+    for i in lst:
+        if i not in list:
+            list.append(i)
+    return list
+print(remove_duplicate([33,33,3,2,]))
