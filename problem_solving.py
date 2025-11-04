@@ -159,3 +159,58 @@ def remove_duplicate(lst):
             list.append(i)
     return list
 print(remove_duplicate([33,33,3,2,]))
+
+def remove_dupicate(s):
+    word=s.split(' ,')
+    qnique=[]
+    for w in word:
+        if w not in qnique:
+            qnique.append(w)
+    return ", " .join(qnique)
+print(remove_dupicate("nishat,nishat,"))
+
+
+def remove_duplicate(s):
+    word = s.split(',')
+    unique = []
+    for w in word:
+        w = w.strip()
+        if w not in unique:
+            unique.append(w)
+    return ",".join(unique)
+
+print(remove_duplicate("nishat,nishat ,n,m,m,n"))
+
+
+def marge_and_sort(a,b):
+    return sorted( a + b)
+print(marge_and_sort([3,4,5],[4,5,6]))
+
+
+def marge_and_sort(a,b):
+    return sorted(a+ b)
+print(marge_and_sort([2,3,4,5,6],[0,9,8,87,]))
+
+
+def marge_sort(a,b):
+    return sorted(a+b)
+print(marge_sort([2,3,4],[4,5,6]))
+
+def fibonacci(n):
+    a,b = 0,1
+    result =[]
+    for _ in range(n):
+        result.append(a)
+        a,b = b,a +b
+    return result
+print(fibonacci(6))
+
+
+def fibonacci(s):
+    a,b = 0,1
+    result =[]
+    for _ in range(s):
+        result.append(a)
+        a,b = b,a+b
+    return result
+print(fibonacci(7))
