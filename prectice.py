@@ -164,3 +164,73 @@ def finonacci(s):
         a,b = b ,a + b
     return result
 print(finonacii(6))
+
+def reverse_strign(s):
+    return s[: : -1]
+print(reverse_strign('nishat'))
+def even_number(nums):
+    total =0
+    for i in nums:
+        if i % 2== 0:
+            total +=i
+    return total
+print(even_number([2,3,4,5,6,7,8,9,10]))
+
+
+def ood_num(num):
+    total=0
+    for i in num:
+        if i % 2 !=0:
+            total +=i
+    return total
+print(ood_num([2,3,4,5,6,7]))
+
+
+def word_frquency(sentance):
+    word = sentance.split()
+    freq={}
+    for i in word:
+        freq[i] =freq.get(0,1) + 1
+    return freq
+print(word_frquency('odoo nishat nuri '))
+
+
+def word_frequnecy(sentance):
+    word = sentance.split()
+    freq={}
+    for i in word:
+        freq[i] = freq.get(0,1) + 1
+    return freq
+print(word_frequnecy('nishat nuri nishat nuri nusha'))
+
+
+def most_frequnce(lst):
+    freq={}
+    for i in lst:
+        freq[i] =freq.get(0,1) +1
+    return max(freq,key=freq.get)
+print(most_frequnce([3,4,5,7,9]))
+
+
+def fibbancii(s):
+    a,b =0,1
+    res=[]
+    for _ in range(s):
+        res.append(a)
+        a,b =b ,a+ b
+    return res
+print(fibbancii(6))
+
+def  remove(lst):
+    return list(dict.fromkeys(lst))
+print(remove([2,3,4,5,6]))
+
+
+def remove(lst):
+    return list(dict.fromkeys(lst))
+print(remove([3,3,4,6,9]))
+
+
+def remove(lst):
+    return list(dict.fromkeys(lst))
+print(remove([2,3,4,5,6,7]))
