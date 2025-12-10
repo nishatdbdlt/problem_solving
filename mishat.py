@@ -1,90 +1,74 @@
-from pkgutil import resolve_name, iter_modules
-from pydoc import replace
-from sqlite3 import SQLITE_CONSTRAINT_UNIQUE
-from zoneinfo import reset_tzpath
-
-from prectice import finonacii
+from functools import total_ordering
 
 
-def even_num(num):
-    total=0
-    for i in num:
-        if i % 2 ==0:
-            total += i
-    return total
-print(even_num([3,4,5,6,7,8]))
+def isValida(s):
+    st = []
+    mp = {")": "(", "]": "[", "}": "{"}
 
-def ood_number(num):
-    total =0
-    for i in num:
-        if i % 2 !=0:
-            total +=i
-    return total
-print(ood_number([1,2,3,4,5,6,7,8,9,10]))
+    for ch in s:
+        if ch in mp:
+            # closing bracket
+            if not st or st[-1] != mp[ch]:
+                return False
+            st.pop()
+        else:
+            # opening bracket
+            st.append(ch)
 
+    return len(st) == 0
 
-def is_palnidrome(s):
-    s = s. lower().replace('','')
-    return s == s[: : -1]
-print(is_palnidrome('nishat'))
-print(is_palnidrome('madam'))
-
-def is_plandrome(s):
-    s = s . lower() . replace('','')
-    return s==s[: : -1]
-print(is_plandrome('madam'))
-print(is_palnidrome('bangladesh'))
-
-
-def is_plandrome(s):
-    s =s.lower().replace('b','a')
-    return s ==s[: : -1]
-print(is_palnidrome('maddam'))
-print((is_palnidrome("nuri")))
-
-
-def most_frequent(lst):
-    freq={}
-    for i in lst:
-        freq[i] =freq.get(0, 1) +1
-    return max(freq,key=freq.get)
-print(most_frequent([1,2,4,5,6,7,8]))
+print(isValida("()[]{}"))   # Example test
 
 
 
+def isValid(s):
+    st=[]
+    mp = {")": "(", "]": "[", "}": "{"}
 
 
+    for ch in s:
+        if ch in mp:
+            if not st or st[-1] !=mp[ch]:
+                return False
+            st.pop()
+        else:
+                st.append(ch)
 
-def fibonacci(s):
-    a, b = 0, 1
+    return len(st) ==0
+print(isValida("()[]{}"))   # Example test
+
+def addTWonum(l1,l2):
     result = []
-    for _ in range(s):
-        result.append(a)
-        a , b = b , a+b
+    carry=0
+    i =0
+    while i < len(l1) or i < len(l2) or carry:
+        val1=l1[i] if i < len(l1) else 0
+        val2=l2[i] if i < len(l2) else 0
+        total= val1 + val2 + carry
+        result.append(total % 10)
+        carry = total // 10
+        i +=1
     return result
-print(fibonacci(9))
-
-#
-# def remove_duplicate(s):
-#     items=s.split()
-#     unique=[]
-#     for item in items:
-#         item= item.strip()
-#         if item not in unique:
-#             unique.append(item)
-#     return ', ' .join(unique)
-# text = 'naim nishat oenk'
-# print(remove_duplicate(text)
+l1 = [2, 4, 3]   # 342
+l2 = [5, 6, 4]   # 465
+print(addTWonum(l1,l2))
 
 
 
-def remove_duplicte(s):
-    items=s.split()
-    unique=[]
-    for item in items:
-        item= item.strip()
-        if item not in unique:
-          unique.append(item)
-    return ',' .join(unique)
-text='nishat, nuiii,mm'
-print(remove_duplicte(text))
+
+def Twonum(l1,l2):
+    result=[]
+    carry=0
+    i =0
+    while i < len(l1) or i <len(l2) or carry:
+        val1=l1[i] if i <len(l1) else 0
+        val2 = l2[i] if i < len(l2) else 0
+        total = val1 + val2 + carry
+        result.append(total % 10)
+        carry = total //10
+        i +=1
+    return result
+l1=[2,3,4]
+l2=[3,4,5]
+
+print(Twonum(l1,l2))
