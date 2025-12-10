@@ -72,3 +72,52 @@ l1=[2,3,4]
 l2=[3,4,5]
 
 print(Twonum(l1,l2))
+
+
+def lengthofSubstrig(s):
+    char_set=set()
+    left=0
+    max_len=0
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left +=1
+        char_set.add(s[right])
+
+        max_len=max(max_len,right - left +1)
+
+    return max_len
+print(lengthofSubstrig('nuri'))
+
+
+
+def lengthofSubstring(s):
+    char_set=set()
+    left=0
+    max_len=0
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left +=1
+        char_set.add(s[right])
+
+        max_len=max(max_len,right - left +1)
+    return max_len
+print(lengthofSubstrig('nishat'))
+
+
+
+
+def lenght(s):
+    char_set=set()
+    left=0
+    max_len=0
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left +=1
+        char_set.add(s[right])
+        max_len=max(max_len,right -left +1)
+    return max_len
+print(lengthofSubstrig('nishat'))
+
