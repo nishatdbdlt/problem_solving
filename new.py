@@ -1,137 +1,78 @@
-#
-#
-# s ='education'
-# vowels =0
-# for ch in s:
-#     if ch .lower() in 'aeiou':
-#         vowels +=1
-#
-# print(vowels)
-#
-# s ='education'
-# vowels = 0
-# for ch in s:
-#     if ch .lower()in 'aeiou':
-#         vowels +=1
-# print(vowels)
-#
-# test = 'madam'
-# if test==test[::-1]:
-#     print('palindrome')
-# else:
-#     print(" not palindrome")
-#
-# s ='ppppp'
-# vowels =0
-# for ch in s:
-#     if ch.lower() in 'aeiou':
-#         vowels+=1
-# print(vowels)
-#
-#
-#
-# test ='madam'
-# if test == test[::-1]:
-#     print('palindrome')
-# else:
-#     print("not palindrome")
-from typing import reveal_type
+def two_sum(nums,terget):
+    seen={}
+    for i ,n in enumerate(nums):
+        rem=terget - n
+        if rem in seen:
+            return [seen[rem],i]
 
-# nums = [12, 7, 19, 4, 19, 15]
-# lergest= nums[0]
-# for num in nums:
-#     if num > lergest:
-#         lergest= num
-#
-# secound = None
-# if num !=lergest:
-#     if secound is  None or num > lergest:
-#         secound = num
-# print(secound)
-#
-#
-#
+        seen[n] =i
+print(two_sum([2,3,4,5,7],9))
 
 
-nums = [2,3,4,5,6,7,8,9]
-lergest = None
-secound =None
-for num in nums:
-    if lergest is None or num > lergest:
-        secound = lergest
-        lergest = num
-    elif num !=lergest:
-        if secound is None or num > lergest:
-            secound = num
-print(secound)
+def maxprofite(prices):
+    buy=prices[0]
+    profit=0
+    for p in prices:
+        buy=min(buy,p)
+        profit=max(profit,p-buy)
+    return profit
+print(maxprofite([2,3,4,5,6,7]))
 
-#
-# s = "I am learning python programming".strip()
-# count = 0
-# is_word = False
-#
-# for ch in s:
-#     if ch != " ":          # single space check
-#         if not is_word:    # new word start
-#             count += 1
-#             is_word = True
-#     else:
-#         is_word = False    # space → word sesh
-#
-# print("Total words =", count)
-
-s = "I am learning python programming".strip()
-count =0
-is_word =False
-
-for ch in s:
-     if ch !=" ":
-         if not is_word:
-             count +=1
-             is_word =True
-     else:
-         is_word=False
-print(count)
+def maxProfit(prices):
+    buy=prices[0]
+    profit=0
+    for p in prices:
+        buy=min(buy,p)
+        profit=max(profit,p-buy)
+    return profit
+print(maxProfit([2,3,4,5,6,7,8,9,0]))
 
 
+def isValid(s):
+    st=[]
+    mp = {")": "(", "]": "[", "}": "{"}
+    for ch in s:
+        if ch in mp:
+            if not st or st.pop() !=mp[ch]:
+                return False
+        else:
+            st.append(ch)
+    return not st
+print(isValid("()[]{}"))   # Example test
 
+def findMedianSortedArray(num1, num2):
+    merged = []
+    i = j = 0
+    m, n = len(num1), len(num2)
 
-digit=2345
-sum =0
-while digit > 0:
-    num = digit %10
-    sum +=num
-    digit = digit // 10
-print(sum)
+    # Merge two sorted arrays
+    while i < m and j < n:
+        if num1[i] < num2[j]:
+            merged.append(num1[i])
+            i += 1
+        else:
+            merged.append(num2[j])
+            j += 1
 
+    # Remaining elements
+    while i < m:
+        merged.append(num1[i])
+        i += 1
 
-num = 234556
+    while j < n:
+        merged.append(num2[j])
+        j += 1
 
-sum =0
-while num > 0:
-    digit = num % 10
-    sum +=digit
-    num = num // 10
-print(sum)
+    # Find median
+    total = len(merged)
+    mid = total // 2
 
-
-s = 'nishat'
-count = {}
-for ch in s:
-    if ch in count:
-        count[ch] +=1
+    if total % 2 == 0:
+        return (merged[mid - 1] + merged[mid]) / 2
     else:
-        count[ch] =1
-for ch, count in count.items():
-    print(f"{ch} : {count}")
+        return merged[mid]
 
-n = 'bangladesh'
 
-count ={}
-for ch in n:
-    if ch in count:
-        count[ch] +=1
-    else:
-        count[ch] =1
-print(count)
-
+num1 = [1, 2]
+num2 = [2, 3]
+print(findMedianSortedArray(num1, num2))
