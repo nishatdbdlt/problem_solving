@@ -45,3 +45,32 @@ def binnarysearch(nums,terget):
              right=mid -1
     return -1
 print(binnarysearch([2,3,4,5,6,7],7))
+
+
+# def reverse_list(lst):
+#     reversed_lst = []
+#     for i in range(len(lst)-1, -1, -1):
+#         reversed_lst.append(lst[i])
+#     return reversed_lst
+#
+# # Test
+# arr = [3, 4, 5, 6, 7]
+# print(reverse_list(arr))
+
+#
+def reverse_list(lst):
+    reverse_list=[]
+    for i in range(len(lst)-1,-1,-1):
+        reverse_list.append(lst[i])
+    return reverse_list
+arr=[3,4,5,6,7,8]
+print(reverse_list(arr))
+
+
+def maxSubarray(nums):
+    cur=best=nums[0]
+    for n in nums[1: ]:
+        cur=max(n,cur+n)
+        best=max(best,cur)
+    return best
+print(maxSubarray([2,2,3,4,5,6,7]))
