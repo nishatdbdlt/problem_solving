@@ -69,6 +69,87 @@ print(longestcommonPrefix(["nishat", "nishu", "ni"]))
 
 
 
+def isvalid(s:str) ->bool:
+    stack=[]
+
+    mapping = {")": "(", "]": "[", "}": "{"}
+    for char in s:
+        if char in mapping:
+            top_element=stack.pop() if stack else '#'
+            if mapping[char] !=top_element:
+                return False
+
+        else:
+            stack.append(char)
+    return not stack
+print(isvalid("()[]{}"))    # True
+print(isvalid("(]"))        # False
+
+
+def isValid(s:str) ->bool:
+    stack=[]
+    map= {")": "(", "]": "[", "}": "{"}
+
+    for char in s:
+        if char in map:
+            top_element=stack.pop() if stack else  '#'
+            if map[char] !=top_element:
+                return False
+        else:
+            stack.append(char)
+    return not stack
+print(isvalid("()[]{}"))    # True
+print(isvalid("(]"))
+
+
+def isvalid(s:str) ->bool:
+    stack=[]
+    c
+
+    for char in s:
+        if char in map:
+            top_element=stack.pop() if stack else '#'
+            if map[char] !=top_element:
+                return False
+        else:
+            stack.append(char)
+    return not stack
+print(isvalid("()[]{}"))    # True
+print(isvalid("(]"))
+
+def isvalid(s:str) ->bool:
+    stack =[]
+    map= {")": "(", "]": "[", "}": "{"}
+
+    for i in s:
+        if i in map:
+            top_element=stack.pop() if stack else '#'
+            if map[i] !=top_element:
+                return False
+        else:
+            stack.append(i)
+    return not stack
+print(isvalid("()[]{}"))
+
+print(isvalid("(]"))
+
+
+def isvalid(s:str) ->bool:
+    stack=[]
+    map= {")": "(", "]": "[", "}": "{"}
+    for i in s:
+        if i in map:
+            top_element=stack.pop() if stack else '#'
+            if map[i] !=top_element:
+                return False
+        else:
+            stack.append(i)
+    return not stack
+print(isvalid("()[]{}"))
+
+
+
+
 
 
 
