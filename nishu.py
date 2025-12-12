@@ -74,3 +74,45 @@ def maxSubarray(nums):
         best=max(best,cur)
     return best
 print(maxSubarray([2,2,3,4,5,6,7]))
+
+
+def mmaxSubarray(nums):
+    cur=best=nums[0]
+    for i in nums[1 :] :
+        cur=max(i,cur)
+        best=max(best,cur)
+    return best
+print(maxSubarray([2,2,3,4,5,6,7]))
+
+
+def maxSubArraay(nums):
+    cur=best=nums[0]
+    for i in nums[1:]:
+        cur=max(i,cur)
+        best=max(best,cur)
+    return best
+print(maxSubArraay([2,3,5,6,7,8]))
+
+
+# def movezero(nums):
+#     i =0
+#     for j in range(len(nums)):
+#         if nums[j] !=0:
+#             nums[i],nums[j]=nums[j],nums[i]
+#             i += 1
+#     return nums
+# arr = [3,4,5,7,9,0,12,0]
+# movezero(arr)
+# print(movezero(arr))
+
+
+def movezero(nums):
+    i =0
+    for j in range(len(nums)):
+        if nums[j] !=0:
+            nums[i],nums[j] = nums[j],nums[i]
+            i +=1
+    return nums
+arr=[2,3,40,0,0,0,9,5,6,7,8]
+movezero(arr)
+print(movezero(arr))
