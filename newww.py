@@ -1,3 +1,7 @@
+from codecs import replace_errors
+from zoneinfo import reset_tzpath
+
+
 def isPalindreom(n:int) ->bool:
     s=str(n)
     return s==s[:: -1]
@@ -50,22 +54,8 @@ def longestcommonPrefix(strs: list[str])  -> str:
 print(longestcommonPrefix(["nishat", "nishu", "ni"]))
 
 
-def longestcommonPrefix(strs: list[str])  -> str:
-    if not strs:
-        return ''
-
-    prefix=strs[0]
-    for i in strs[1:]:
-        while not i .startswith(prefix):
-            prefix=prefix[:-1]
-            if not prefix:
-                return ''
-    return prefix
 
 
-
-
-print(longestcommonPrefix(["nishat", "nishu", "ni"]))
 
 
 
@@ -104,7 +94,8 @@ print(isvalid("(]"))
 
 def isvalid(s:str) ->bool:
     stack=[]
-    c
+    map = {")": "(", "]": "[", "}": "{"}
+
 
     for char in s:
         if char in map:
@@ -151,7 +142,34 @@ print(isvalid("()[]{}"))
 
 
 
+def longestcommonprefix(strs:list[str]) ->str:
 
+ if not strs:
+     return ''
+
+ prefix=strs[0]
+ for i in strs[1:]:
+     while not i.startswith(prefix):
+         prefix=prefix[:-1]
+         if prefix == '':
+             return ''
+
+
+
+ return prefix
+print(longestcommonprefix(["nishat", "nishu", "ni"]))
+
+def longestcommonprefix(strs:list[str]) -> str:
+    if not strs:
+        return ''
+    prefix=strs[0]
+    for i in strs[1:]:
+        while not i.startswith(prefix):
+            prefix=prefix[ :-1]
+            if prefix =='':
+                return ''
+    return prefix
+print(longestcommonprefix(["nishat", "nishu", "ni"]))
 
 
 
